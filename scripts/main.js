@@ -3,17 +3,17 @@ var $totop = $('div.totop');
 var $sidebar = $('div.sidebar');
 $window.scroll(function() {
   var $progressContainer = $('.progress-bar-container');
-  var $progress = $('.progress-bar');
-  var $article = $('div.post > article');
   var winTop = $window.scrollTop();
-  if (typeof $article[0] !== "undefined") {
+  if (typeof $progressContainer[0] !== "undefined") {
+    var $article = $('div.post > article');
+    var $progress = $('.progress-bar');
     var articleTop = $article.offset().top;
     var articleHeight = $article.height();
     var winHeight = $window.height();
     var totalScroll = ((winTop - articleTop - 8) / (articleHeight - (winHeight - 8))) * 100;
-    totalScroll = totalScroll > 100 ? 100 : totalScroll;
+    totalScroll = totalScroll > 100 ? 100 : ((totalScroll < 0) ? 0 : totalScroll);
     $progress.css('width',totalScroll + '%');
-    if (winTop < articleTop) {
+    if (winTop < articleTop || winHeight > articleHeight) {
       $progressContainer.css('opacity', 0);
     } else {
       $progressContainer.css('opacity', 1);
