@@ -2,11 +2,11 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>Blog</title>
   
-  <link href="/blog/atom.xml" rel="self"/>
+  <link href="/atom.xml" rel="self"/>
   
-  <link href="http://joemacaco.github.io/"/>
+  <link href="http://blog.joemacaco.idv.tw/"/>
   <updated>2017-08-06T16:25:40.175Z</updated>
-  <id>http://joemacaco.github.io/</id>
+  <id>http://blog.joemacaco.idv.tw/</id>
   
   <author>
     <name>Joe Ma</name>
@@ -17,8 +17,8 @@
   
   <entry>
     <title>Mysql Avoid Repair With Keycache</title>
-    <link href="http://joemacaco.github.io/2017/08/06/Mysql-Avoid-Repair-With-Keycache/"/>
-    <id>http://joemacaco.github.io/2017/08/06/Mysql-Avoid-Repair-With-Keycache/</id>
+    <link href="http://blog.joemacaco.idv.tw/2017/08/06/Mysql-Avoid-Repair-With-Keycache/"/>
+    <id>http://blog.joemacaco.idv.tw/2017/08/06/Mysql-Avoid-Repair-With-Keycache/</id>
     <published>2017-08-06T15:23:59.000Z</published>
     <updated>2017-08-06T16:25:40.175Z</updated>
     
@@ -41,14 +41,14 @@
     </summary>
     
     
-      <category term="MYSQL" scheme="http://joemacaco.github.io/tags/MYSQL/"/>
+      <category term="MYSQL" scheme="http://blog.joemacaco.idv.tw/tags/MYSQL/"/>
     
   </entry>
   
   <entry>
     <title>GitHub Pages 靜態網站</title>
-    <link href="http://joemacaco.github.io/2017/07/23/GitHub%20Pages/"/>
-    <id>http://joemacaco.github.io/2017/07/23/GitHub Pages/</id>
+    <link href="http://blog.joemacaco.idv.tw/2017/07/23/GitHub%20Pages/"/>
+    <id>http://blog.joemacaco.idv.tw/2017/07/23/GitHub Pages/</id>
     <published>2017-07-23T10:18:07.000Z</published>
     <updated>2017-07-23T14:43:08.208Z</updated>
     
@@ -98,16 +98,16 @@
     </summary>
     
     
-      <category term="Hexo" scheme="http://joemacaco.github.io/tags/Hexo/"/>
+      <category term="Hexo" scheme="http://blog.joemacaco.idv.tw/tags/Hexo/"/>
     
-      <category term="Github" scheme="http://joemacaco.github.io/tags/Github/"/>
+      <category term="Github" scheme="http://blog.joemacaco.idv.tw/tags/Github/"/>
     
   </entry>
   
   <entry>
     <title>Sublime Text 3 Setup</title>
-    <link href="http://joemacaco.github.io/2015/04/22/Sublim%20Text%203%20Setup/"/>
-    <id>http://joemacaco.github.io/2015/04/22/Sublim Text 3 Setup/</id>
+    <link href="http://blog.joemacaco.idv.tw/2015/04/22/Sublim%20Text%203%20Setup/"/>
+    <id>http://blog.joemacaco.idv.tw/2015/04/22/Sublim Text 3 Setup/</id>
     <published>2015-04-22T07:52:07.000Z</published>
     <updated>2017-08-06T16:17:42.396Z</updated>
     
@@ -145,7 +145,7 @@
     </summary>
     
     
-      <category term="Sublime" scheme="http://joemacaco.github.io/tags/Sublime/"/>
+      <category term="Sublime" scheme="http://blog.joemacaco.idv.tw/tags/Sublime/"/>
     
   </entry>
   
