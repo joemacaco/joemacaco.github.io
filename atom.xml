@@ -2,11 +2,11 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>Blog</title>
   
-  <link href="/blog/atom.xml" rel="self"/>
+  <link href="/atom.xml" rel="self"/>
   
-  <link href="http://joemacaco.github.io/"/>
+  <link href="http://blog.joemacaco.idv.tw/"/>
   <updated>2017-08-15T12:39:42.928Z</updated>
-  <id>http://joemacaco.github.io/</id>
+  <id>http://blog.joemacaco.idv.tw/</id>
   
   <author>
     <name>Joe Ma</name>
@@ -17,8 +17,8 @@
   
   <entry>
     <title>Line Bot 介紹</title>
-    <link href="http://joemacaco.github.io/2017/08/15/Line-Bot-%E4%BB%8B%E7%B4%B9/"/>
-    <id>http://joemacaco.github.io/2017/08/15/Line-Bot-介紹/</id>
+    <link href="http://blog.joemacaco.idv.tw/2017/08/15/Line-Bot-%E4%BB%8B%E7%B4%B9/"/>
+    <id>http://blog.joemacaco.idv.tw/2017/08/15/Line-Bot-介紹/</id>
     <published>2017-08-15T06:18:22.000Z</published>
     <updated>2017-08-15T12:39:42.928Z</updated>
     
@@ -62,14 +62,14 @@
     </summary>
     
     
-      <category term="Line" scheme="http://joemacaco.github.io/tags/Line/"/>
+      <category term="Line" scheme="http://blog.joemacaco.idv.tw/tags/Line/"/>
     
   </entry>
   
   <entry>
     <title>React 學習資源整合</title>
-    <link href="http://joemacaco.github.io/2017/08/12/React-%E5%AD%B8%E7%BF%92%E8%B3%87%E6%BA%90%E6%95%B4%E5%90%88/"/>
-    <id>http://joemacaco.github.io/2017/08/12/React-學習資源整合/</id>
+    <link href="http://blog.joemacaco.idv.tw/2017/08/12/React-%E5%AD%B8%E7%BF%92%E8%B3%87%E6%BA%90%E6%95%B4%E5%90%88/"/>
+    <id>http://blog.joemacaco.idv.tw/2017/08/12/React-學習資源整合/</id>
     <published>2017-08-12T08:27:22.000Z</published>
     <updated>2017-08-15T13:04:14.205Z</updated>
     
@@ -112,14 +112,14 @@
     </summary>
     
     
-      <category term="React" scheme="http://joemacaco.github.io/tags/React/"/>
+      <category term="React" scheme="http://blog.joemacaco.idv.tw/tags/React/"/>
     
   </entry>
   
   <entry>
     <title>Mysql Avoid Repair With Keycache</title>
-    <link href="http://joemacaco.github.io/2017/08/06/Mysql-Avoid-Repair-With-Keycache/"/>
-    <id>http://joemacaco.github.io/2017/08/06/Mysql-Avoid-Repair-With-Keycache/</id>
+    <link href="http://blog.joemacaco.idv.tw/2017/08/06/Mysql-Avoid-Repair-With-Keycache/"/>
+    <id>http://blog.joemacaco.idv.tw/2017/08/06/Mysql-Avoid-Repair-With-Keycache/</id>
     <published>2017-08-06T15:23:59.000Z</published>
     <updated>2017-08-06T16:25:40.175Z</updated>
     
@@ -142,14 +142,14 @@
     </summary>
     
     
-      <category term="MYSQL" scheme="http://joemacaco.github.io/tags/MYSQL/"/>
+      <category term="MYSQL" scheme="http://blog.joemacaco.idv.tw/tags/MYSQL/"/>
     
   </entry>
   
   <entry>
     <title>Linux Command 筆記</title>
-    <link href="http://joemacaco.github.io/2017/08/05/Linux-Command-%E7%AD%86%E8%A8%98/"/>
-    <id>http://joemacaco.github.io/2017/08/05/Linux-Command-筆記/</id>
+    <link href="http://blog.joemacaco.idv.tw/2017/08/05/Linux-Command-%E7%AD%86%E8%A8%98/"/>
+    <id>http://blog.joemacaco.idv.tw/2017/08/05/Linux-Command-筆記/</id>
     <published>2017-08-05T04:18:07.000Z</published>
     <updated>2017-08-15T08:13:07.691Z</updated>
     
@@ -177,14 +177,14 @@
     </summary>
     
     
-      <category term="Linux" scheme="http://joemacaco.github.io/tags/Linux/"/>
+      <category term="Linux" scheme="http://blog.joemacaco.idv.tw/tags/Linux/"/>
     
   </entry>
   
   <entry>
     <title>GitHub Pages 靜態網站</title>
-    <link href="http://joemacaco.github.io/2017/07/23/GitHub%20Pages/"/>
-    <id>http://joemacaco.github.io/2017/07/23/GitHub Pages/</id>
+    <link href="http://blog.joemacaco.idv.tw/2017/07/23/GitHub%20Pages/"/>
+    <id>http://blog.joemacaco.idv.tw/2017/07/23/GitHub Pages/</id>
     <published>2017-07-23T10:18:07.000Z</published>
     <updated>2017-07-23T14:43:08.208Z</updated>
     
@@ -234,16 +234,16 @@
     </summary>
     
     
-      <category term="Hexo" scheme="http://joemacaco.github.io/tags/Hexo/"/>
+      <category term="Hexo" scheme="http://blog.joemacaco.idv.tw/tags/Hexo/"/>
     
-      <category term="Github" scheme="http://joemacaco.github.io/tags/Github/"/>
+      <category term="Github" scheme="http://blog.joemacaco.idv.tw/tags/Github/"/>
     
   </entry>
   
   <entry>
     <title>Sublime Text 3 Setup</title>
-    <link href="http://joemacaco.github.io/2015/04/22/Sublim%20Text%203%20Setup/"/>
-    <id>http://joemacaco.github.io/2015/04/22/Sublim Text 3 Setup/</id>
+    <link href="http://blog.joemacaco.idv.tw/2015/04/22/Sublim%20Text%203%20Setup/"/>
+    <id>http://blog.joemacaco.idv.tw/2015/04/22/Sublim Text 3 Setup/</id>
     <published>2015-04-22T07:52:07.000Z</published>
     <updated>2017-08-06T16:17:42.396Z</updated>
     
@@ -281,7 +281,7 @@
     </summary>
     
     
-      <category term="Sublime" scheme="http://joemacaco.github.io/tags/Sublime/"/>
+      <category term="Sublime" scheme="http://blog.joemacaco.idv.tw/tags/Sublime/"/>
     
   </entry>
   
