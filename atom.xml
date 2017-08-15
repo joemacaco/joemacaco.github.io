@@ -5,7 +5,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="http://joemacaco.github.io/"/>
-  <updated>2017-08-06T16:25:40.175Z</updated>
+  <updated>2017-08-15T12:39:42.928Z</updated>
   <id>http://joemacaco.github.io/</id>
   
   <author>
@@ -14,6 +14,57 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Line Bot 介紹</title>
+    <link href="http://joemacaco.github.io/2017/08/15/Line-Bot-%E4%BB%8B%E7%B4%B9/"/>
+    <id>http://joemacaco.github.io/2017/08/15/Line-Bot-介紹/</id>
+    <published>2017-08-15T06:18:22.000Z</published>
+    <updated>2017-08-15T12:39:42.928Z</updated>
+    
+    <content type="html"><![CDATA[<p>LINE BOT雖然已經推出很久了，不過一直沒有時間去玩玩看，所以今天就記錄一下摸索的過程。<br><img src="/blog/imgs/line-bot/MessagingAPI.png" alt="MessagingAPI"></p>
+<a id="more"></a>
+<p>LINE BOT雖然已經推出很久了，不過一直沒有時間去玩玩看，所以今天就記錄一下摸索的過程。<br><img src="/blog/imgs/line-bot/MessagingAPI.png" alt="MessagingAPI"></p>
+<h3 id="LINE-BOT-設定"><a href="#LINE-BOT-設定" class="headerlink" title="LINE BOT 設定"></a>LINE BOT 設定</h3><p>來到 <a href="https://business.line.me/zh-hant/" target="_blank" rel="external">LINE Business Center</a> 建立BOT帳號，先登入個人帳號</p>
+<h4 id="新增帳號"><a href="#新增帳號" class="headerlink" title="新增帳號"></a>新增帳號</h4><p>選取 <code>新增公司/經營者</code><br><img src="/blog/imgs/line-bot/addNew.png" alt="addNewImg"></p>
+<p>註冊基本資訊選取個人<br><img src="/blog/imgs/line-bot/register.png" alt="registerImg"></p>
+<p>註冊完成後，開始使用服務，選用 <code>Messaging Api</code><br><img src="/blog/imgs/line-bot/startService.png" alt="startServiceImg"></p>
+<p>選擇 <code>開始使用Developer Trial</code><br><img src="/blog/imgs/line-bot/MessagingAPIChoose.png" alt="MessagingAPIChooseImg"></p>
+<p>上傳<code>帳號圖片</code>、並輸入<code>帳號名稱</code>選取<code>業種</code><br><img src="/blog/imgs/line-bot/botInitSet.png" alt="botInitSetImg"></p>
+<p>申請完成的畫面<br><img src="/blog/imgs/line-bot/initSetSuccess.png" alt="initSetSuccessImg"></p>
+<p>進入<code>LINE MANAGER</code> 點選 <code>開始使用API</code><br><img src="/blog/imgs/line-bot/botStart.png" alt="botStartImg"></p>
+<h4 id="設定"><a href="#設定" class="headerlink" title="設定"></a>設定</h4><p>BOT請求設定，Webhook傳訊勾選啟用</p>
+<p>選取LINE Developers取得 <code>Channel ID</code> <code>Channel Secret</code> <code>Channel Access Token</code><br><img src="/blog/imgs/line-bot/botOption.png" alt="botOptionImg"></p>
+<h3 id="Webhook-URL-設定"><a href="#Webhook-URL-設定" class="headerlink" title="Webhook URL 設定"></a>Webhook URL 設定</h3><p>選擇使用node.js去建立<br>建議在往下操作前先了解Node.js</p>
+<h4 id="初始安裝"><a href="#初始安裝" class="headerlink" title="初始安裝"></a>初始安裝</h4><p>建立初始化 <code>package.json</code> 檔案<br><figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="attr">"name"</span>: <span class="string">"lineChatBot"</span>,</div><div class="line">  <span class="attr">"version"</span>: <span class="string">"1.0.0"</span>,</div><div class="line">  <span class="attr">"description"</span>: <span class="string">""</span>,</div><div class="line">  <span class="attr">"main"</span>: <span class="string">"index.js"</span>,</div><div class="line">  <span class="attr">"scripts"</span>: &#123;</div><div class="line">    <span class="attr">"start"</span>: <span class="string">"node ."</span></div><div class="line">  &#125;,</div><div class="line">  <span class="attr">"author"</span>: <span class="string">""</span>,</div><div class="line">  <span class="attr">"license"</span>: <span class="string">"MIT"</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>安裝會使用到的套件<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm install linebot express --save</div></pre></td></tr></table></figure></p>
+<h4 id="程式碼"><a href="#程式碼" class="headerlink" title="程式碼"></a>程式碼</h4><p>建立 <code>index.js</code> 檔案<br>填入一些個人linebot的基礎設定，<code>CHANNEL_ID</code>、<code>CHANNEL_SECRET</code>、<code>CHANNEL_ACCESS_TOKEN</code><br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> linebot = <span class="built_in">require</span>(<span class="string">'linebot'</span>);</div><div class="line"><span class="keyword">var</span> express = <span class="built_in">require</span>(<span class="string">'express'</span>);</div><div class="line"></div><div class="line"><span class="keyword">var</span> bot = linebot(&#123;</div><div class="line">  <span class="attr">channelId</span>: CHANNEL_ID,</div><div class="line">  <span class="attr">channelSecret</span>: CHANNEL_SECRET,</div><div class="line">  <span class="attr">channelAccessToken</span>: CHANNEL_ACCESS_TOKEN</div><div class="line">&#125;);</div><div class="line"></div><div class="line">bot.on(<span class="string">'message'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">event</span>) </span>&#123;</div><div class="line">  <span class="keyword">if</span> (event.message.type = <span class="string">'text'</span>) &#123;</div><div class="line">    <span class="keyword">var</span> msg = event.message.text;</div><div class="line">    event.reply(msg).then(<span class="function"><span class="keyword">function</span>(<span class="params">data</span>) </span>&#123;</div><div class="line">      <span class="comment">// success </span></div><div class="line">    &#125;).catch(<span class="function"><span class="keyword">function</span>(<span class="params">error</span>) </span>&#123;</div><div class="line">      <span class="comment">// error </span></div><div class="line">    &#125;);</div><div class="line">  &#125;</div><div class="line">&#125;);</div><div class="line"></div><div class="line"><span class="keyword">const</span> app = express();</div><div class="line"><span class="keyword">const</span> linebotParser = bot.parser();</div><div class="line">app.post(<span class="string">'/'</span>, linebotParser);</div><div class="line"></div><div class="line"><span class="keyword">var</span> server = app.listen(process.env.PORT || <span class="number">8080</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="keyword">var</span> port = server.address().port;</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+<h3 id="Heroku-設定與佈署"><a href="#Heroku-設定與佈署" class="headerlink" title="Heroku 設定與佈署"></a>Heroku 設定與佈署</h3><p>因為LINE BOT的Webhook URL有限定需要https所以才會選擇使用Heroku<br>先建立<a href="https://dashboard.heroku.com/" target="_blank" rel="external">Heroku</a>帳號</p>
+<h4 id="佈署"><a href="#佈署" class="headerlink" title="佈署"></a>佈署</h4><p><code>New</code>裡面選取<code>Create new app</code><br>將程式碼佈署上去<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ git remote add heroku https://git.heroku.com/app_name.git</div><div class="line">$ git push heroku master</div></pre></td></tr></table></figure></p>
+<p>選取More選單底下的View logs可以看到，代表server已經運作<br><img src="/blog/imgs/line-bot/herokuServerUp.png" alt="herokuServerUpImg"></p>
+<h4 id="設定-1"><a href="#設定-1" class="headerlink" title="設定"></a>設定</h4><p>設定Config Variables，填上LINE BOT的<code>ChannelSecret</code>和<code>ChannelAccessToken</code><br><img src="/blog/imgs/line-bot/herokuSet.png" alt="herokuSetImg"></p>
+<p>完成後在LINE BOT設定Webhook URL，並按下VERIFY如果出現Success就代表成功<br><img src="/blog/imgs/line-bot/webhookURL.png" alt="webhookURLImg"></p>
+<h3 id="LINE-BOT-測試"><a href="#LINE-BOT-測試" class="headerlink" title="LINE BOT 測試"></a>LINE BOT 測試</h3><p>透過QRCode加入好友後，可開始聊天，目前是會將訊息重新回傳給使用者<br><img src="/blog/imgs/line-bot/line-bot.jpg" alt="lineBotImg"></p>
+<p>在Heroku則可以看到底下的Log訊息<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="attr">type</span>: <span class="string">'message'</span>,</div><div class="line">  <span class="attr">replyToken</span>: <span class="string">'xxxxxx'</span>,</div><div class="line">  <span class="attr">source</span>:</div><div class="line">  &#123;</div><div class="line">    <span class="attr">userId</span>: <span class="string">'xxxxxx'</span>,</div><div class="line">    <span class="attr">type</span>: <span class="string">'user'</span>,</div><div class="line">    <span class="attr">profile</span>: [<span class="built_in">Function</span>]</div><div class="line">  &#125;,</div><div class="line">  <span class="attr">timestamp</span>: <span class="number">1502799858530</span>,</div><div class="line">  <span class="attr">message</span>:</div><div class="line">  &#123;</div><div class="line">    <span class="attr">type</span>: <span class="string">'text'</span>,</div><div class="line">    <span class="attr">id</span>: <span class="string">'xxx'</span>,</div><div class="line">    <span class="attr">text</span>: <span class="string">'測試'</span>,</div><div class="line">    <span class="attr">content</span>: [<span class="built_in">Function</span>]</div><div class="line">  &#125;,</div><div class="line">  <span class="attr">reply</span>: [<span class="built_in">Function</span>]</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h3 id="參考連結"><a href="#參考連結" class="headerlink" title="參考連結"></a>參考連結</h3><ul>
+<li><a href="https://www.npmjs.com/package/linebot" target="_blank" rel="external">linebot</a></li>
+<li><a href="https://www.npmjs.com/package/express" target="_blank" rel="external">express</a></li>
+<li><a href="https://dashboard.heroku.com/" target="_blank" rel="external">heroku</a></li>
+<li><a href="https://devcenter.heroku.com/articles/getting-started-with-nodejs#introduction" target="_blank" rel="external">heroku-getting-started-with-nodejs</a></li>
+<li><a href="https://stackoverflow.com/questions/18008620/node-js-express-js-app-only-works-on-port-3000" target="_blank" rel="external">node-js-express-js-app-works-on-custom-port</a></li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;LINE BOT雖然已經推出很久了，不過一直沒有時間去玩玩看，所以今天就記錄一下摸索的過程。&lt;br&gt;&lt;img src=&quot;/blog/imgs/line-bot/MessagingAPI.png&quot; alt=&quot;MessagingAPI&quot;&gt;&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="Line" scheme="http://joemacaco.github.io/tags/Line/"/>
+    
+  </entry>
   
   <entry>
     <title>Mysql Avoid Repair With Keycache</title>
@@ -42,6 +93,91 @@
     
     
       <category term="MYSQL" scheme="http://joemacaco.github.io/tags/MYSQL/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>React 學習資源整合</title>
+    <link href="http://joemacaco.github.io/2017/08/06/React-%E5%AD%B8%E7%BF%92%E8%B3%87%E6%BA%90%E6%95%B4%E5%90%88/"/>
+    <id>http://joemacaco.github.io/2017/08/06/React-學習資源整合/</id>
+    <published>2017-08-06T08:27:22.000Z</published>
+    <updated>2017-08-15T08:13:42.629Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="React"><a href="#React" class="headerlink" title="React"></a>React</h3><h4 id="React-Dom"><a href="#React-Dom" class="headerlink" title="React Dom"></a><a href="https://github.com/facebook/react/tree/master/packages/react-dom" target="_blank" rel="external">React Dom</a></h4><p><code>render(element, container, [callback])</code></p>
+<h4 id="React-Router"><a href="#React-Router" class="headerlink" title="React Router"></a><a href="https://github.com/ReactTraining/react-router" target="_blank" rel="external">React Router</a></h4><p>Router,Route…</p>
+<h4 id="React-Router-Redux"><a href="#React-Router-Redux" class="headerlink" title="React Router Redux"></a><a href="https://github.com/reactjs/react-router-redux" target="_blank" rel="external">React Router Redux</a></h4><p>React Router跟Redux連結</p>
+<p><code>ConnectedRouter</code>, <code>routerReducer</code>, <code>routerMiddleware</code>…</p>
+<p>ConnectedRouter will use the store from Provider automatically</p>
+<h3 id="Flux"><a href="#Flux" class="headerlink" title="Flux"></a>Flux</h3><h4 id="Flux-1"><a href="#Flux-1" class="headerlink" title="Flux"></a><a href="https://github.com/facebook/flux" target="_blank" rel="external">Flux</a></h4><p><code>Dispatcher</code></p>
+<p><code>Store</code></p>
+<p><code>Action</code></p>
+<p><code>View</code></p>
+<h3 id="Redux"><a href="#Redux" class="headerlink" title="Redux"></a>Redux</h3><h4 id="Redux-1"><a href="#Redux-1" class="headerlink" title="Redux"></a><a href="http://chentsulin.github.io/redux/" target="_blank" rel="external">Redux</a></h4><p><code>createStore(reducer, [preloadedState], [enhancer])</code> =&gt; 建立一個 Redux store</p>
+<p><code>combineReducers(reducers)</code> =&gt; 將全部Reducer組合起來才可帶入createStore</p>
+<p><code>applyMiddleware(...middlewares)</code> =&gt; middleware可應用在非同步呼叫</p>
+<p><code>createStore</code> = Store =&gt; api =&gt; getState(), dispatch(action), subscribe(listener)</p>
+<h4 id="React-Redux"><a href="#React-Redux" class="headerlink" title="React Redux"></a><a href="https://github.com/reactjs/react-redux" target="_blank" rel="external">React Redux</a></h4><p>讓React跟Redux做連結</p>
+<p><code>&lt;Provider store&gt;</code> =&gt; 放置再最外層</p>
+<p><code>connect([mapStateToProps], [mapDispatchToProps], [mergeProps], [options])</code> =&gt; container</p>
+<h3 id="Middleware"><a href="#Middleware" class="headerlink" title="Middleware"></a>Middleware</h3><h4 id="Redux-Thunk"><a href="#Redux-Thunk" class="headerlink" title="Redux Thunk"></a><a href="https://github.com/gaearon/redux-thunk" target="_blank" rel="external">Redux Thunk</a></h4><p>可以去了解一下thunk function</p>
+<h4 id="Redux-Promise"><a href="#Redux-Promise" class="headerlink" title="Redux Promise"></a><a href="https://github.com/acdlite/redux-promise" target="_blank" rel="external">Redux Promise</a></h4><p>Promise呼叫</p>
+<h4 id="Redux-Logger"><a href="#Redux-Logger" class="headerlink" title="Redux Logger"></a><a href="https://github.com/evgenyrodionov/redux-logger" target="_blank" rel="external">Redux Logger</a></h4><p>Log</p>
+<h3 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h3><ul>
+<li><a href="https://github.com/facebook/react/tree/master/packages/react-dom" target="_blank" rel="external">React Dom</a></li>
+<li><a href="https://github.com/ReactTraining/react-router" target="_blank" rel="external">React Router</a></li>
+<li><a href="https://github.com/reactjs/react-router-redux" target="_blank" rel="external">React Router Redux</a></li>
+<li><a href="https://github.com/facebook/flux" target="_blank" rel="external">Flux</a></li>
+<li><a href="http://chentsulin.github.io/redux/" target="_blank" rel="external">Redux</a></li>
+<li><a href="https://github.com/reactjs/react-redux" target="_blank" rel="external">React Redux</a></li>
+<li><a href="https://github.com/gaearon/redux-thunk" target="_blank" rel="external">Redux Thunk</a></li>
+<li><a href="https://github.com/acdlite/redux-promise" target="_blank" rel="external">Redux Promise</a></li>
+<li><a href="https://github.com/evgenyrodionov/redux-logger" target="_blank" rel="external">Redux Logger</a></li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;React&quot;&gt;&lt;a href=&quot;#React&quot; class=&quot;headerlink&quot; title=&quot;React&quot;&gt;&lt;/a&gt;React&lt;/h3&gt;&lt;h4 id=&quot;React-Dom&quot;&gt;&lt;a href=&quot;#React-Dom&quot; class=&quot;headerlink&quot; ti
+    
+    </summary>
+    
+    
+      <category term="React" scheme="http://joemacaco.github.io/tags/React/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Linux Command 筆記</title>
+    <link href="http://joemacaco.github.io/2017/08/05/Linux-Command-%E7%AD%86%E8%A8%98/"/>
+    <id>http://joemacaco.github.io/2017/08/05/Linux-Command-筆記/</id>
+    <published>2017-08-05T04:18:07.000Z</published>
+    <updated>2017-08-15T08:13:07.691Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="資料處理工具"><a href="#資料處理工具" class="headerlink" title="資料處理工具"></a>資料處理工具</h3><h4 id="awk"><a href="#awk" class="headerlink" title="awk"></a><a href="http://linux.vbird.org/linux_basic/0330regularex.php#awk" target="_blank" rel="external">awk</a></h4><p>用欄位切割取值</p>
+<h4 id="sed"><a href="#sed" class="headerlink" title="sed"></a><a href="http://linux.vbird.org/linux_basic/0330regularex.php#sed" target="_blank" rel="external">sed</a></h4><p>取代</p>
+<p><code>sed -e &#39;s/123/abc/g&#39;</code> (-e 操作stdout) </p>
+<p><code>sed -i &#39;s/123/abc/g&#39; filename</code> (-i 操作file檔案內容)</p>
+<h4 id="grep"><a href="#grep" class="headerlink" title="grep"></a><a href="http://linux.vbird.org/linux_basic/0320bash.php#grep" target="_blank" rel="external">grep</a></h4><p>搜尋字串</p>
+<h4 id="rsync"><a href="#rsync" class="headerlink" title="rsync"></a><a href="http://linux.vbird.org/linux_server/0310telnetssh.php#rsync" target="_blank" rel="external">rsync</a></h4><p>使用差異備份檔案</p>
+<h4 id="組合使用"><a href="#組合使用" class="headerlink" title="組合使用"></a>組合使用</h4><p><code>ps aux | grep &#39;command&#39; | grep -v grep | awk &#39;{ print $2 }&#39;</code> (取的程序的pid)</p>
+<h3 id="程序管理"><a href="#程序管理" class="headerlink" title="程序管理"></a>程序管理</h3><h4 id="nohup"><a href="#nohup" class="headerlink" title="nohup"></a><a href="http://linux.vbird.org/linux_basic/0440processcontrol.php#nohup" target="_blank" rel="external">nohup</a></h4><p>背景執行指令</p>
+<p><code>nohup [指令與參數]</code> (在終端機前景中工作)</p>
+<p><code>nohup [指令與參數] &amp;</code> (在終端機背景中工作)</p>
+<h4 id="ps"><a href="#ps" class="headerlink" title="ps"></a><a href="http://linux.vbird.org/linux_basic/0440processcontrol.php#ps" target="_blank" rel="external">ps</a></h4><p>程序觀察</p>
+<p><code>ps aux</code> (觀察系統所有的程序資料)</p>
+<h3 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h3><ul>
+<li><a href="http://ibookmen.blogspot.tw/2010/11/unix-2.html" target="_blank" rel="external">Unix 重新導向跟 2&gt;&amp;1</a></li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;資料處理工具&quot;&gt;&lt;a href=&quot;#資料處理工具&quot; class=&quot;headerlink&quot; title=&quot;資料處理工具&quot;&gt;&lt;/a&gt;資料處理工具&lt;/h3&gt;&lt;h4 id=&quot;awk&quot;&gt;&lt;a href=&quot;#awk&quot; class=&quot;headerlink&quot; title=&quot;awk
+    
+    </summary>
+    
+    
+      <category term="Linux" scheme="http://joemacaco.github.io/tags/Linux/"/>
     
   </entry>
   
