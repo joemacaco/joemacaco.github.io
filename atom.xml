@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://blog.joemacaco.idv.tw/"/>
-  <updated>2017-08-15T13:14:06.973Z</updated>
+  <updated>2017-10-05T10:13:38.000Z</updated>
   <id>http://blog.joemacaco.idv.tw/</id>
   
   <author>
@@ -16,11 +16,36 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>MAC 安裝 Laravel 開發環境設定</title>
+    <link href="http://blog.joemacaco.idv.tw/2017/10/05/MAC%20%E5%AE%89%E8%A3%9D%20Laravel%20%E9%96%8B%E7%99%BC%E7%92%B0%E5%A2%83%E8%A8%AD%E5%AE%9A/"/>
+    <id>http://blog.joemacaco.idv.tw/2017/10/05/MAC 安裝 Laravel 開發環境設定/</id>
+    <published>2017-10-05T10:05:38.000Z</published>
+    <updated>2017-10-05T10:13:38.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>記錄一下在mac上安裝開發環境的過程</p>
+<a id="more"></a>
+<p>記錄一下在mac上安裝開發環境的過程</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;記錄一下在mac上安裝開發環境的過程&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="MAC" scheme="http://blog.joemacaco.idv.tw/tags/MAC/"/>
+    
+      <category term="PHP" scheme="http://blog.joemacaco.idv.tw/tags/PHP/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Line Bot 介紹</title>
     <link href="http://blog.joemacaco.idv.tw/2017/08/15/Line-Bot-%E4%BB%8B%E7%B4%B9/"/>
     <id>http://blog.joemacaco.idv.tw/2017/08/15/Line-Bot-介紹/</id>
     <published>2017-08-15T06:18:22.000Z</published>
-    <updated>2017-08-15T13:14:06.973Z</updated>
+    <updated>2017-08-15T13:14:06.000Z</updated>
     
     <content type="html"><![CDATA[<p>LINE BOT雖然已經推出很久了，不過一直沒有時間去玩玩看，所以今天就記錄一下摸索的過程。<br><img src="/blog/imgs/line-bot/MessagingAPI.png" alt="MessagingAPI"></p>
 <a id="more"></a>
@@ -72,7 +97,7 @@
     <link href="http://blog.joemacaco.idv.tw/2017/08/12/React-%E5%AD%B8%E7%BF%92%E8%B3%87%E6%BA%90%E6%95%B4%E5%90%88/"/>
     <id>http://blog.joemacaco.idv.tw/2017/08/12/React-學習資源整合/</id>
     <published>2017-08-12T08:27:22.000Z</published>
-    <updated>2017-08-15T13:04:14.205Z</updated>
+    <updated>2017-08-15T13:04:14.000Z</updated>
     
     <content type="html"><![CDATA[<h3 id="React"><a href="#React" class="headerlink" title="React"></a>React</h3><h4 id="React-Dom"><a href="#React-Dom" class="headerlink" title="React Dom"></a><a href="https://github.com/facebook/react/tree/master/packages/react-dom" target="_blank" rel="external">React Dom</a></h4><p><code>render(element, container, [callback])</code></p>
 <h4 id="React-Router"><a href="#React-Router" class="headerlink" title="React Router"></a><a href="https://github.com/ReactTraining/react-router" target="_blank" rel="external">React Router</a></h4><p>Router,Route…</p>
@@ -122,7 +147,7 @@
     <link href="http://blog.joemacaco.idv.tw/2017/08/06/Mysql-Avoid-Repair-With-Keycache/"/>
     <id>http://blog.joemacaco.idv.tw/2017/08/06/Mysql-Avoid-Repair-With-Keycache/</id>
     <published>2017-08-06T15:23:59.000Z</published>
-    <updated>2017-08-06T16:25:40.175Z</updated>
+    <updated>2017-08-06T16:25:40.000Z</updated>
     
     <content type="html"><![CDATA[<p>最近在使用mysql的時候遇到了，當資料表處於<strong>Repair with keycache</strong>的狀態總是會花費很大量的時間，造成一些不必要的問題，如果想要資料表不是<strong>Repair with keycache</strong>而是<strong>repair by sorting</strong>則需要調整一些資料庫的系統參數。</p>
 <a id="more"></a>
@@ -152,7 +177,7 @@
     <link href="http://blog.joemacaco.idv.tw/2017/08/05/Linux-Command-%E7%AD%86%E8%A8%98/"/>
     <id>http://blog.joemacaco.idv.tw/2017/08/05/Linux-Command-筆記/</id>
     <published>2017-08-05T04:18:07.000Z</published>
-    <updated>2017-08-15T08:13:07.691Z</updated>
+    <updated>2017-08-15T08:13:06.000Z</updated>
     
     <content type="html"><![CDATA[<h3 id="資料處理工具"><a href="#資料處理工具" class="headerlink" title="資料處理工具"></a>資料處理工具</h3><h4 id="awk"><a href="#awk" class="headerlink" title="awk"></a><a href="http://linux.vbird.org/linux_basic/0330regularex.php#awk" target="_blank" rel="external">awk</a></h4><p>用欄位切割取值</p>
 <h4 id="sed"><a href="#sed" class="headerlink" title="sed"></a><a href="http://linux.vbird.org/linux_basic/0330regularex.php#sed" target="_blank" rel="external">sed</a></h4><p>取代</p>
@@ -187,7 +212,7 @@
     <link href="http://blog.joemacaco.idv.tw/2017/07/23/GitHub%20Pages/"/>
     <id>http://blog.joemacaco.idv.tw/2017/07/23/GitHub Pages/</id>
     <published>2017-07-23T10:18:07.000Z</published>
-    <updated>2017-07-23T14:43:08.208Z</updated>
+    <updated>2017-07-23T14:43:08.000Z</updated>
     
     <content type="html"><![CDATA[<p>為了架設個人Blog所以才關注到，Github有提供將個人projects直接轉換靜態網站的服務，一些簡單的介紹可以觀看官方介紹影片<a href="https://www.youtube.com/watch?v=2MsN8gpT6jY" target="_blank" rel="external">What is GitHub Pages?</a></p>
 <p><strong>GitHub Pages</strong>官網底下有推薦使用<strong>Jekyll</strong>去建構靜態網頁，不過是使用<strong>Ruby</strong>去操作的，所以最後選擇使用<strong>Hexo</strong>當這次的介紹，<strong>Hexo</strong>官網也有繁體中文的文件所以建構起來也比較容易</p>
@@ -246,7 +271,7 @@
     <link href="http://blog.joemacaco.idv.tw/2015/04/22/Sublim%20Text%203%20Setup/"/>
     <id>http://blog.joemacaco.idv.tw/2015/04/22/Sublim Text 3 Setup/</id>
     <published>2015-04-22T07:52:07.000Z</published>
-    <updated>2017-08-06T16:17:42.396Z</updated>
+    <updated>2017-08-06T16:17:42.000Z</updated>
     
     <content type="html"><![CDATA[<p>Sublime Text 3 Setup<br>以下介紹一些基礎設定，跟一些好用的插件介紹<br>下載 <a href="http://www.sublimetext.com/3" target="_blank" rel="external">Sublime 3</a></p>
 <a id="more"></a>
